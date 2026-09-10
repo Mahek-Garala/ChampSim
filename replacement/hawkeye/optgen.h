@@ -11,7 +11,7 @@ class OPTgen{
 
     size_t history_len ;
     size_t assoc ;
-    
+
     std::size_t findLast(std::size_t set_idx , std::uint64_t address);
     void incr_usageInterval(std::size_t set_idx  ,std::size_t last) ;
     std::size_t check_usageInterval(std::size_t set_idx ,std::size_t last ) ;
