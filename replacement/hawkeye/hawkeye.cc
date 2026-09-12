@@ -30,12 +30,12 @@ void hawkeye::replacement_cache_fill(uint32_t triggering_cpu, long set, long way
 
 void hawkeye::update_replacement_state(uint32_t triggering_cpu, long set, long way, champsim::address full_addr, champsim::address ip, champsim::address victim_addr,access_type type, uint8_t hit)
 {
-    uint64_t addr = full_addr.to<uint64_t>();// just type cast
+    uint64_t block_addr = full_addr.to<uint64_t>() >> 6;// 64B cache block address from full Byte address
 
-    bool opt_hit = optgen.access(set,addr);
-    if(lastPC[set].find(addr) != lastPC[set].end() )
+    bool opt_hit = optgen.access(set,block_addr);
+    if(lastPC[set].find(block_addr) != lastPC[set].end() )
     {
-        uint64_t prevPC = lastPC[set][addr] ;
+        uint64_t prevPC = lastPC[set][block_addr] ;
         predictor.train(prevPC,opt_hit);
     }
     bool is_friendly = predictor.predict(ip.to<uint64_t>());
@@ -45,5 +45,5 @@ void hawkeye::update_replacement_state(uint32_t triggering_cpu, long set, long w
         update_rrpv(rrpv[set],way,cls,true); // hit + cls
     }
     
-    lastPC[set][addr] = ip.to<uint64_t>() ; // now update last pc to current as curr become last now for next same pc access
+    lastPC[set][block_addr] = ip.to<uint64_t>() ; // now update last pc to current as curr become last now for next same pc access
 }
