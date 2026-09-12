@@ -1,9 +1,9 @@
 #include "predictor.h" 
 
-HawkeyePredictor::HawkeyePredictor(std::size_t num_entries, int counter_bits)
+HawkeyePredictor::HawkeyePredictor(std::size_t entries, int bits)
 {
-    this->counter_bits = counter_bits;
-    this->num_entries = num_entries;
+    counter_bits = bits;
+    num_entries = entries;
     pred_counter = std::vector<int>(num_entries, 4); // give it a size
 }
  // cache access give PC also with address and set index.

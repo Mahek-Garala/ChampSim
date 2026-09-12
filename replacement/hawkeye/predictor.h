@@ -1,3 +1,6 @@
+#ifndef HAWKEYE_PREDICTOR_H
+#define HAWKEYE_PREDICTOR_H
+
 #include <bits/stdc++.h>
 
 class HawkeyePredictor {
@@ -19,3 +22,5 @@ class HawkeyePredictor {
     // int max_counter; // 7
     std::size_t get_hashedIndex(uint64_t pc) const;
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef HAWKEYE_RRIP_H
+#define HAWKEYE_RRIP_H
+
 #include <bits/stdc++.h>
 
 // per cache set
@@ -8,3 +11,4 @@ void update_rrpv(std::vector<int>& rrpv, std::size_t way, Classification cls, bo
 // Selects a victim way, aging the set if necessary, per Section 3.4.
 std::size_t find_victim(std::vector<int>& rrpv);
 
+#endif

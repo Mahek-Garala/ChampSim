@@ -1,3 +1,6 @@
+#ifndef HAWKEYE_OPTGEN_H
+#define HAWKEYE_OPTGEN_H
+
 #include<bits/stdc++.h>
 
 class OPTgen{
@@ -17,3 +20,5 @@ class OPTgen{
     std::size_t check_usageInterval(std::size_t set_idx ,std::size_t last ) ;
 
 };
+
+#endif
