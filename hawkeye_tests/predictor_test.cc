@@ -13,7 +13,7 @@ int main() {
     // query_pcs: pcs to print counter/prediction for, after all trainingis applied
     std::vector<uint64_t> query_pcs = {
     };
-    // TEST_VECTOR_END Hawkeye-champsim.md 2026-08-27 5 / 10
+    // TEST_VECTOR_END 
     for (auto& [pc, opt_hit] : train_events) {
         pred.train(pc, opt_hit);
     }
