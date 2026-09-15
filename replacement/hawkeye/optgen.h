@@ -1,7 +1,12 @@
 #ifndef HAWKEYE_OPTGEN_H
 #define HAWKEYE_OPTGEN_H
 
-#include<bits/stdc++.h>
+// #include<bits/stdc++.h>
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <deque>
+#include <vector>
 
 class OPTgen{
     public : 

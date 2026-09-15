@@ -1,8 +1,9 @@
 #ifndef HAWKEYE_RRIP_H
 #define HAWKEYE_RRIP_H
 
-#include <bits/stdc++.h>
-
+// #include <bits/stdc++.h>
+#include <cstddef>
+#include <vector>
 // per cache set
 
 enum class Classification { CACHE_FRIENDLY, CACHE_AVERSE };

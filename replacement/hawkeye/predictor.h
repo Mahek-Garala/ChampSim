@@ -1,8 +1,10 @@
 #ifndef HAWKEYE_PREDICTOR_H
 #define HAWKEYE_PREDICTOR_H
 
-#include <bits/stdc++.h>
-
+// #include <bits/stdc++.h>
+#include <cstddef>
+#include <cstdint>
+#include <vector>
 class HawkeyePredictor {
     public:
     // num_entries: size of the PC-indexed table (paper: 8K entries)
