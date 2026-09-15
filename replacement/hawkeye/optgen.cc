@@ -15,6 +15,8 @@ bool OPTgen::access(std::size_t set_idx , std::uint64_t address)
     {
         return false;
     }
+    if(history_len == 0 || assoc == 0)
+        return false;
     if(addr[set_idx].size() >= history_len) // window >= 8*k
     {
         addr[set_idx].pop_front();

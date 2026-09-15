@@ -4,7 +4,7 @@ HawkeyePredictor::HawkeyePredictor(std::size_t entries, int bits)
 {
     counter_bits = bits;
     num_entries = entries;
-    pred_counter = std::vector<int>(num_entries, 4); // give it a size
+    pred_counter = std::vector<int>(num_entries, 4); // give it a size and assigned with default value 4
 }
  // cache access give PC also with address and set index.
 void HawkeyePredictor::train(uint64_t pc, bool opt_hit)

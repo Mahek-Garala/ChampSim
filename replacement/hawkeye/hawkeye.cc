@@ -47,3 +47,16 @@ void hawkeye::update_replacement_state(uint32_t triggering_cpu, long set, long w
     
     lastPC[set][block_addr] = ip.to<uint64_t>() ; // now update last pc to current as curr become last now for next same pc access
 }
+
+
+/* We predict current line is friendly or averse using the PC of current line access.
+ It is rather unintuitive as to why PC is used instead of seeing if the line gets evicted or stays based on OPT. 
+ For understanding this we first need to understand how OPTgen works.
+ OPTgen checks whether last access to same line X was hit or miss using history data. 
+ We then train the last reference’s PC, friendly if hit, averse if miss. 
+ This is important as we now know that the PC of that old reference brought/refered to a “friendly” line
+ (as that line got accessed again and results in hit). 
+ If it was a miss, we can train the PC negatively. Same PC can access different lines. 
+ The predictor tracks PC behaviour. 
+ For ex: If a PC brings/refers to a line that keeps getting referred later resulting in a hit, it will be trained friendly. 
+ So when we have current line access, we would like to know what is the behaviour of the PC that referred the current line (look up predictor). */
